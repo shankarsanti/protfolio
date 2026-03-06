@@ -1,6 +1,5 @@
 // Data Transfer Objects (DTOs)
 export interface ImageDto {
-  bannerWebp: string;
   profilePng: string;
   profileWebp: string;
 }
