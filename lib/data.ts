@@ -16,8 +16,9 @@ export const about: AboutDto = {
   ],
   status: "Available for opportunities",
   images: {
-    profilePng: "/profile.png",
-    profileWebp: "/profile.webp",
+    bannerWebp: "/banner.webp",
+    profilePng: "/shankar.png",
+    profileWebp: "/shankar.png",
   },
   links: {
     website: "https://shankarsanti.dev",
