@@ -3,6 +3,7 @@ import {
   ExperienceDto,
   EducationDto,
   ToolDto,
+  CertificateDto,
 } from "./types";
 
 export const about: AboutDto = {
@@ -160,5 +161,44 @@ export const tools: ToolDto[] = [
       light: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
       dark: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
     },
+  },
+];
+
+export const certificates: CertificateDto[] = [
+  {
+    title: "Frontend Development Certification",
+    issuer: "KLE Society",
+    date: "June 2024",
+    description: "Completed comprehensive frontend development training covering React.js, HTML5, CSS3, and modern web practices.",
+    credentialUrl: "",
+    logo: {
+      light: "/placeholder.webp",
+      dark: "/placeholder.webp",
+    },
+    iconName: "FaCertificate",
+  },
+  {
+    title: "Backend Development Certification",
+    issuer: "KLE Society",
+    date: "January 2025",
+    description: "Completed backend development certification covering Node.js, Express.js, databases, and API development.",
+    credentialUrl: "",
+    logo: {
+      light: "/placeholder.webp",
+      dark: "/placeholder.webp",
+    },
+    iconName: "FaServer",
+  },
+  {
+    title: "JavaScript Certification",
+    issuer: "NamasteDev",
+    date: "2024",
+    description: "Completed JavaScript certification, deepening understanding of core JavaScript concepts and modern practices.",
+    credentialUrl: "",
+    logo: {
+      light: "/placeholder.webp",
+      dark: "/placeholder.webp",
+    },
+    iconName: "FaCode",
   },
 ];

@@ -1,5 +1,6 @@
 // Data Transfer Objects (DTOs)
 export interface ImageDto {
+  bannerWebp: string;
   profilePng: string;
   profileWebp: string;
 }
@@ -60,6 +61,18 @@ export interface ToolDto {
   _id?: string;
   name: string;
   logo: LogoDto;
+  index?: number;
+}
+
+export interface CertificateDto {
+  _id?: string;
+  title: string;
+  issuer: string;
+  date: string;
+  description: string;
+  credentialUrl?: string;
+  logo: LogoDto;
+  iconName?: string;
   index?: number;
 }
 

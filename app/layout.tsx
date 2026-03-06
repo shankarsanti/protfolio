@@ -63,6 +63,15 @@ export const metadata: Metadata = {
     description: SITE_CONFIG.description,
     siteName: SITE_CONFIG.name,
     emails: SITE_CONFIG.email,
+    images: [
+      {
+        url: "/shankar.png",
+        width: 1200,
+        height: 630,
+        alt: SITE_CONFIG.title,
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -70,6 +79,15 @@ export const metadata: Metadata = {
     description: SITE_CONFIG.description,
     creator: SITE_CONFIG.twitterHandle,
     site: SITE_CONFIG.twitterHandle,
+    images: [
+      {
+        url: "/shankar.png",
+        width: 1200,
+        height: 630,
+        alt: SITE_CONFIG.title,
+        type: "image/png",
+      },
+    ],
   },
   robots: {
     index: true,
