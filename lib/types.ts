@@ -57,6 +57,17 @@ export interface EducationDto {
   index?: number;
 }
 
+export interface CertificationDto {
+  _id?: string;
+  title: string;
+  issuer: string;
+  date: string;
+  description?: string;
+  credentialUrl?: string;
+  image: string;
+  index?: number;
+}
+
 export interface ToolDto {
   _id?: string;
   name: string;
@@ -64,15 +75,14 @@ export interface ToolDto {
   index?: number;
 }
 
-export interface CertificateDto {
+export interface ProjectDto {
   _id?: string;
   title: string;
-  issuer: string;
-  date: string;
   description: string;
-  credentialUrl?: string;
-  logo: LogoDto;
-  iconName?: string;
+  technologies: string[];
+  highlights: string[];
+  url?: string;
+  github?: string;
   index?: number;
 }
 

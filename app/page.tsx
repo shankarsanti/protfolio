@@ -4,12 +4,12 @@ import {
   About,
   Experience,
   Education,
-  Certificates,
+  Certifications,
   Connect,
   Footer,
 } from "@/components/sections";
 import { ThankYou } from "@/components/sections/ThankYou";
-import { about, experiences, educations, tools, certificates } from "@/lib/data";
+import { about, experiences, educations, tools, certifications } from "@/lib/data";
 
 export const revalidate = 3600;
 
@@ -22,7 +22,7 @@ export default function Home() {
         <About about={about} tools={tools} />
         <Experience experiences={experiences} />
         <Education educations={educations} />
-        <Certificates certificates={certificates} />
+        <Certifications certifications={certifications} />
         <Connect about={about} />
         <ThankYou about={about} />
       </main>

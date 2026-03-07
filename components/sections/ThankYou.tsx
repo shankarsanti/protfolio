@@ -23,7 +23,7 @@ export function ThankYou({ about }: { about?: AboutDto | null }) {
             🧠 Think deeply. Build wisely. Keep your intelligence sharp!
           </p>
           <Image
-            src={about?.images.bannerWebp || "/placeholder.webp"}
+            src="/shankar.png"
             alt="Thank You"
             width={1200}
             height={600}

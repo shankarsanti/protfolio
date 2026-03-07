@@ -25,68 +25,46 @@ const iconMap: Record<string, React.ElementType> = {
 
 export function Footer({ about }: { about?: AboutDto | null }) {
   const currentYear = new Date().getFullYear();
-
-  // Use data from API or defaults/empty
-  const name = about?.name || "Dileepa Bandara";
-  const description = about?.tagline || "Personal Developer Portfolio";
+  const name = about?.name || "Shankar Laxman Santi";
 
   return (
-    <footer className="bg-bg-secondary text-text-primary border-t border-accent-blue/20">
+    <footer className="bg-bg-secondary text-text-primary border-t border-border-light">
       <Container>
-        <div className="py-16">
-          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="py-8">
+          <div className="grid gap-6 md:grid-cols-3 items-start">
             {/* Brand */}
-            <div className="lg:col-span-2">
-              <Link href="/" className="inline-block text-2xl font-bold mb-4">
+            <div>
+              <Link href="/" className="inline-block text-xl font-bold mb-2 hover:text-accent-blue transition-colors">
                 {name.split(" ")[0]}
                 <span className="text-accent-blue">.</span>
               </Link>
-              <p className="text-text-secondary max-w-md mb-6">{description}</p>
-
-              {/* Social Icons */}
-              <div className="flex items-center gap-5 text-text-muted flex-wrap">
-                {about?.links &&
-                  Object.entries(about.links).map(([key, url]) => {
-                    // Filter out non-socials
-                    if (key === "website" || key === "email" || !url)
-                      return null;
-
-                    const platformKey = key.toLowerCase();
-                    const IconComponent = iconMap[platformKey];
-
-                    if (!IconComponent) return null;
-
-                    return (
-                      <IconButton
-                        key={key}
-                        href={url}
-                        external={true}
-                        variant="ghost"
-                        className="hover:text-accent-blue hover:bg-transparent"
-                        aria-label={key}
-                      >
-                        <IconComponent className="size-5" />
-                      </IconButton>
-                    );
-                  })}
-              </div>
+              <p className="text-text-tertiary text-xs mb-3">
+                Full Stack Developer
+              </p>
+              
+              {/* View Resume Button */}
+              <a
+                href="/SHANKAR.SANTI_RESUME.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-accent-blue text-on-accent rounded-lg text-xs font-medium hover:opacity-90 transition-opacity"
+              >
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                View Resume
+              </a>
             </div>
 
             {/* Quick Links */}
-            <div className="lg:col-span-2">
-              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-              <ul className="grid grid-cols-2 gap-3">
+            <div>
+              <h4 className="text-xs font-semibold mb-3 text-text-primary uppercase tracking-wider">Navigation</h4>
+              <ul className="space-y-1.5">
                 {NAV_LINKS.map((link) => {
-                  const href = link.href.startsWith("#")
-                    ? `/${link.href}`
-                    : link.href;
-
+                  const href = link.href.startsWith("#") ? `/${link.href}` : link.href;
                   return (
                     <li key={link.href}>
-                      <Link
-                        href={href}
-                        className="text-text-secondary hover:text-accent-blue transition-colors duration-500"
-                      >
+                      <Link href={href} className="text-text-secondary hover:text-accent-blue transition-colors text-xs">
                         {link.label}
                       </Link>
                     </li>
@@ -94,27 +72,58 @@ export function Footer({ about }: { about?: AboutDto | null }) {
                 })}
               </ul>
             </div>
+
+            {/* Connect */}
+            <div>
+              <h4 className="text-xs font-semibold mb-3 text-text-primary uppercase tracking-wider">Connect</h4>
+              <div className="flex items-center gap-2 mb-3">
+                {about?.links &&
+                  Object.entries(about.links).map(([key, url]) => {
+                    if (key === "website" || key === "email" || !url) return null;
+                    const IconComponent = iconMap[key.toLowerCase()];
+                    if (!IconComponent) return null;
+
+                    return (
+                      <a
+                        key={key}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center w-8 h-8 rounded-lg bg-bg-tertiary text-text-muted hover:bg-accent-blue hover:text-on-accent transition-all"
+                        aria-label={key}
+                      >
+                        <IconComponent className="size-3.5" />
+                      </a>
+                    );
+                  })}
+              </div>
+              {about?.links?.email && (
+                <a href={`mailto:${about.links.email}`} className="text-text-secondary hover:text-accent-blue transition-colors text-xs">
+                  {about.links.email}
+                </a>
+              )}
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-6 border-t border-border-light">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-text-secondary text-sm text-center md:text-left">
+        <div className="py-4 border-t border-border-light">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
+            <p className="text-text-tertiary">
               © {currentYear} {name}. All rights reserved.
             </p>
-            <div className="flex items-center gap-3 text-text-secondary text-sm">
+            <div className="flex items-center gap-3 text-text-secondary">
               <Link
-                href="https://github.com/dileepadev/dileepa-dev"
+                href="https://github.com/shankarsanti/protfolio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 hover:text-accent-blue transition-colors duration-300"
+                className="flex items-center gap-1 hover:text-accent-blue transition-colors"
               >
-                <FaGithub className="h-4 w-4" />
-                <span>View Source</span>
+                <FaGithub className="h-3.5 w-3.5" />
+                <span>Source</span>
               </Link>
-              <div className="w-0.5 h-4 bg-border-medium rounded-sm"></div>
-              <span>v{packageJson.version}</span>
+              <span className="text-text-tertiary">•</span>
+              <span className="text-accent-blue font-medium">v{packageJson.version}</span>
             </div>
           </div>
         </div>

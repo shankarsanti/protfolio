@@ -73,21 +73,9 @@ export function EducationCard({ education, className }: EducationCardProps) {
 
           {/* Institution */}
           <div className="flex items-center gap-2 mb-2">
-            {education.url ? (
-              <a
-                href={education.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-primary hover:text-accent-blue transition-colors font-medium"
-              >
-                {education.institution}
-                <FaExternalLinkAlt className="inline-block h-3 w-3 ml-1 mb-0.5" />
-              </a>
-            ) : (
-              <span className="text-text-primary font-medium">
-                {education.institution}
-              </span>
-            )}
+            <span className="text-text-primary font-medium">
+              {education.institution}
+            </span>
           </div>
 
           {/* Period */}

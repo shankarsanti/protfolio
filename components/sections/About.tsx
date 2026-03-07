@@ -86,15 +86,13 @@ export function About({
               transition={{ duration: 0.5 }}
               className="relative shrink-0 w-64 h-64 md:w-80 md:h-100 rounded-2xl overflow-hidden bg-bg-tertiary shadow-2xl ring-4 ring-white/10 dark:ring-white/5 order-start lg:order-first"
             >
-              {about?.images.profilePng && (
-                <Image
-                  src={about.images.profilePng}
-                  alt={about.name}
-                  fill
-                  sizes="(max-width: 768px) 256px, 320px"
-                  className="object-cover"
-                />
-              )}
+              <Image
+                src="/shankar.jpeg"
+                alt={about?.name || "Shankar"}
+                fill
+                sizes="(max-width: 768px) 256px, 320px"
+                className="object-cover"
+              />
             </motion.div>
 
             <motion.div

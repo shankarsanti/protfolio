@@ -1,28 +1,21 @@
-import {
-  AboutDto,
-  ExperienceDto,
-  EducationDto,
-  ToolDto,
-  CertificateDto,
-} from "./types";
+import { AboutDto, ExperienceDto, EducationDto, ToolDto, ProjectDto, CertificationDto } from "./types";
 
 export const about: AboutDto = {
   name: "Shankar Laxman Santi",
   title: "Full Stack Developer",
-  tagline: "Building responsive, scalable web applications",
+  tagline: "React.js | Node.js | MongoDB",
   description: [
-    "I'm a Full Stack Developer with hands-on experience in designing and developing responsive, scalable web applications using React.js, Node.js, Django, and MongoDB.",
-    "Strong foundation in RESTful API development, authentication & authorization, and frontend optimization.",
-    "Passionate about writing clean, maintainable code and contributing to high-quality software solutions in collaboration.",
+    "Full Stack Developer with hands-on experience in designing and developing responsive, scalable web applications using React.js, Node.js, Django, and MongoDB.",
+    "Strong foundation in RESTful API development, authentication & authorization, and frontend optimization. Passionate about writing clean, maintainable code and contributing to high-quality software solutions in collaboration.",
   ],
   status: "Available for opportunities",
   images: {
-    bannerWebp: "/shankar.png",
-    profilePng: "/SHANKARjpeg.jpeg",
-    profileWebp: "/SHANKARjpeg.jpeg",
+    bannerWebp: "/banner.webp",
+    profilePng: "/shankar.png",
+    profileWebp: "/profile.webp",
   },
   links: {
-    website: "https://shankarsanti.dev",
+    website: "https://github.com/shankarsanti",
     email: "shankarsanti2005@gmail.com",
     github: "https://github.com/shankarsanti",
     linkedin: "https://www.linkedin.com/in/shankar-santi/",
@@ -31,8 +24,9 @@ export const about: AboutDto = {
     youtube: "",
   },
   connect: [
-    "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
-    "Feel free to reach out through any of the platforms below!",
+    "Open to freelance projects and full-time opportunities",
+    "Available for consulting and collaboration",
+    "Let's build something amazing together!",
   ],
 };
 
@@ -40,15 +34,15 @@ export const experiences: ExperienceDto[] = [
   {
     title: "Full Stack Developer Intern",
     company: "Nighan2 Labs Pvt. Ltd.",
-    url: "https://nighan2labs.com",
-    period: "September 2024 - Present",
-    description: "Gained hands-on experience building full-stack web applications and collaborating with cross-functional teams using modern development practices.",
-    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "MySQL", "GitHub", "CI/CD"],
+    url: "https://nighan2.com/",
+    period: "September 2025",
+    description:
+      "Gained hands-on experience building full-stack web applications using React.js, Node.js, Express.js, MongoDB and MySQL. Deployed applications ensuring fast, reliable, and scalable cloud hosting. Collaborated with cross-functional team members using GitHub, creating feature branches, pushing code, and performing pull request reviews and merges. Assisted in cloud deployment and CI/CD workflows to automate build. Contributed to UI/UX improvements and responsive, mobile-first designs using modern front-end best practices.",
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "MySQL", "Git", "CI/CD"],
     logo: {
-      light: "/placeholder.webp",
-      dark: "/placeholder.webp",
+      light: "/image.png",
+      dark: "/image.png",
     },
-    iconName: "FaLaptopCode",
   },
 ];
 
@@ -57,7 +51,7 @@ export const educations: EducationDto[] = [
     course: "Bachelor of Computer Applications (BCA)",
     institution: "Rani Channamma University, Belagavi",
     period: "2023 - 2026",
-    description: "Pursuing BCA with focus on full-stack development, database management, and software engineering.",
+    description: "Pursuing BCA with focus on full-stack development, data structures, and modern web technologies",
     url: "https://rcub.ac.in",
     logo: {
       light: "/placeholder.webp",
@@ -69,8 +63,8 @@ export const educations: EducationDto[] = [
     course: "Pre-University Course (Science)",
     institution: "Karnataka Secondary Education Examination",
     period: "2021 - 2023",
-    description: "Completed PUC with Science stream, building foundation in mathematics and computer science.",
-    url: "",
+    description: "Completed PUC with Science stream",
+    url: "#",
     logo: {
       light: "/placeholder.webp",
       dark: "/placeholder.webp",
@@ -78,11 +72,11 @@ export const educations: EducationDto[] = [
     iconName: "FaGraduationCap",
   },
   {
-    course: "Secondary School Leaving Certificate (SSLC)",
+    course: "SSLC",
     institution: "Karnataka Secondary Education Examination Board",
-    period: "2020 - 2021",
-    description: "Completed SSLC with strong academic performance, establishing fundamentals in science and mathematics.",
-    url: "",
+    period: "2021",
+    description: "Completed Secondary School Leaving Certificate",
+    url: "#",
     logo: {
       light: "/placeholder.webp",
       dark: "/placeholder.webp",
@@ -121,6 +115,13 @@ export const tools: ToolDto[] = [
     },
   },
   {
+    name: "Django",
+    logo: {
+      light: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+      dark: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+    },
+  },
+  {
     name: "MongoDB",
     logo: {
       light: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
@@ -142,13 +143,6 @@ export const tools: ToolDto[] = [
     },
   },
   {
-    name: "Django",
-    logo: {
-      light: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-      dark: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-    },
-  },
-  {
     name: "Tailwind CSS",
     logo: {
       light: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
@@ -162,43 +156,69 @@ export const tools: ToolDto[] = [
       dark: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
     },
   },
+  {
+    name: "Java",
+    logo: {
+      light: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+      dark: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    },
+  },
 ];
 
-export const certificates: CertificateDto[] = [
+export const projects: ProjectDto[] = [
   {
-    title: "Frontend Development Certification",
-    issuer: "KLE Society",
-    date: "June 2024",
-    description: "Completed comprehensive frontend development training covering React.js, HTML5, CSS3, and modern web practices.",
-    credentialUrl: "",
-    logo: {
-      light: "/placeholder.webp",
-      dark: "/placeholder.webp",
-    },
-    iconName: "FaCertificate",
+    title: "Dairy Management System",
+    description: "Full-stack ERP web application for dairy management serving 50+ daily users and managing 1,000+ transaction records with real-time MySQL integration.",
+    technologies: ["React.js", "HTML5", "CSS3", "MySQL", "Tailwind CSS"],
+    highlights: [
+      "Designed and developed independently, serving 50+ daily users",
+      "Manages 1,000+ transaction records with real-time MySQL integration",
+      "Built responsive, mobile-first user interfaces improving cross-device usability by 40%",
+      "Implemented secure authentication and role-based access control",
+    ],
   },
   {
-    title: "Backend Development Certification",
-    issuer: "KLE Society",
-    date: "January 2025",
-    description: "Completed backend development certification covering Node.js, Express.js, databases, and API development.",
-    credentialUrl: "",
-    logo: {
-      light: "/placeholder.webp",
-      dark: "/placeholder.webp",
-    },
-    iconName: "FaServer",
+    title: "Pharmacy Management System",
+    description: "Comprehensive 15-module pharmacy management system with POS/Billing, inventory management, and reporting capabilities.",
+    technologies: ["React.js", "HTML5", "CSS3", "MySQL", "Context API"],
+    highlights: [
+      "Developed POS/Billing module with real-time cart, tax/discount calculation, and printable invoice generation",
+      "Built 15-module system with role-based access control (Admin, Pharmacist, Cashier)",
+      "Created 4 report types (Inventory, Sales, Expiry, Supplier) with PDF/CSV export",
+      "Designed 8 reusable shared components and global toast notification system",
+      "Implemented Inventory CRUD with search, filters, pagination, and expiry tracking",
+    ],
+  },
+];
+
+export const certifications: CertificationDto[] = [
+  {
+    title: "Full Stack Development Internship",
+    issuer: "Nighan2 Labs Pvt. Ltd.",
+    date: "September 2025",
+    description: "Completed comprehensive full-stack development internship covering React.js, Node.js, Express.js, MongoDB, and modern web development practices.",
+    credentialUrl: "https://nighan2.com/",
+    image: "/nighan2labs.com.png",
   },
   {
-    title: "JavaScript Certification",
-    issuer: "NamasteDev",
-    date: "2024",
-    description: "Completed JavaScript certification, deepening understanding of core JavaScript concepts and modern practices.",
-    credentialUrl: "",
-    logo: {
-      light: "/placeholder.webp",
-      dark: "/placeholder.webp",
-    },
-    iconName: "FaCode",
+    title: "Namaste JavaScript",
+    issuer: "Namaste Dev",
+    date: "2026",
+    description: "Deep dive into JavaScript fundamentals, closures, async programming, and advanced concepts.",
+    image: "/Namaste JavaScript.certificate.png",
+  },
+  {
+    title: "IBM Certification",
+    issuer: "IBM",
+    date: "2026",
+    description: "Professional certification in software development and cloud technologies.",
+    image: "/IBM certificate .png",
+  },
+  {
+    title: "Workshop on GitHub Copilot",
+    issuer: "GitHub",
+    date: "2025",
+    description: "Hands-on workshop on using GitHub Copilot for AI-assisted coding and productivity enhancement.",
+    image: "/github-copilot-workshop.jpeg",
   },
 ];

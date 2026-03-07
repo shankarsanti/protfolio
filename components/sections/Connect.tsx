@@ -48,8 +48,20 @@ export function Connect({ about }: { about?: AboutDto | null }) {
     const toastId = toast.loading("Sending your message...");
 
     try {
-      // Simulate message sending
-      await new Promise(resolve => setTimeout(resolve, 500));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
       setFormData({ name: "", email: "", subject: "", message: "" });
       toast.success("Message sent! I'll get back to you soon.", {
         id: toastId,
@@ -57,7 +69,9 @@ export function Connect({ about }: { about?: AboutDto | null }) {
     } catch (error) {
       console.error("Error submitting form:", error);
       toast.error(
-        "Something went wrong. Please try again or contact me via email.",
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again or contact me via email.",
         { id: toastId },
       );
     } finally {

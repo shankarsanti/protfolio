@@ -53,16 +53,14 @@ export function Hero({ about }: { about?: AboutDto | null }) {
           transition={{ duration: 0.4 }}
           className="relative mb-8 size-28 sm:size-32 md:size-36 rounded-full overflow-hidden ring-2 ring-border-light dark:ring-white/10 shadow-xl"
         >
-          {about?.images.profileWebp && (
-            <Image
-              src={about.images.profileWebp}
-              alt={about.name}
-              fill
-              sizes="(max-width: 640px) 128px, (max-width: 768px) 144px, 160px"
-              className="object-cover"
-              priority
-            />
-          )}
+          <Image
+            src="/shankar.png"
+            alt={about?.name || "Shankar"}
+            fill
+            sizes="(max-width: 640px) 128px, (max-width: 768px) 144px, 160px"
+            className="object-cover"
+            priority
+          />
         </motion.div>
 
         {/* Terminal-style prompt line */}
@@ -79,7 +77,7 @@ export function Hero({ about }: { about?: AboutDto | null }) {
             tabIndex={0}
           >
             <span className="text-accent-blue select-none">$</span>
-            <span className="text-text-tertiary">dileepadev</span>
+            <span className="text-text-tertiary">shankarsanti</span>
             <span
               className="inline-flex h-4 w-0.5 bg-accent-blue ml-0.5 animate-pulse"
               aria-hidden
