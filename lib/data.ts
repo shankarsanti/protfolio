@@ -20,14 +20,16 @@ export const about: AboutDto = {
     github: "https://github.com/shankarsanti",
     linkedin: "https://www.linkedin.com/in/shankar-santi/",
     xtwitter: "",
-    instagram: "",
+    instagram: "https://www.instagram.com/royal__shankar___/",
     youtube: "",
+    phone: "+919035123514",
   },
   connect: [
     "Open to freelance projects and full-time opportunities",
     "Available for consulting and collaboration",
     "Let's build something amazing together!",
   ],
+  location: "Athani, Belagavi, Karnataka, India",
 };
 
 export const experiences: ExperienceDto[] = [
@@ -167,6 +169,20 @@ export const tools: ToolDto[] = [
 
 export const projects: ProjectDto[] = [
   {
+    title: "💊 Pharmacy Management System",
+    description: "Comprehensive 15-module pharmacy management system with POS/Billing, inventory management, and reporting capabilities.",
+    technologies: ["React", "Node.js", "Express", "MySQL", "Tailwind"],
+    highlights: [
+      "Medicine inventory management",
+      "POS billing",
+      "Sales tracking",
+      "Supplier management",
+      "Authentication system",
+    ],
+    github: "https://github.com/shankarsanti/Pharmacy-Management-System.git",
+    image: "/pharmacy.jpge.png",
+  },
+  {
     title: "Dairy Management System",
     description: "Full-stack ERP web application for dairy management serving 50+ daily users and managing 1,000+ transaction records with real-time MySQL integration.",
     technologies: ["React.js", "HTML5", "CSS3", "MySQL", "Tailwind CSS"],
@@ -176,18 +192,7 @@ export const projects: ProjectDto[] = [
       "Built responsive, mobile-first user interfaces improving cross-device usability by 40%",
       "Implemented secure authentication and role-based access control",
     ],
-  },
-  {
-    title: "Pharmacy Management System",
-    description: "Comprehensive 15-module pharmacy management system with POS/Billing, inventory management, and reporting capabilities.",
-    technologies: ["React.js", "HTML5", "CSS3", "MySQL", "Context API"],
-    highlights: [
-      "Developed POS/Billing module with real-time cart, tax/discount calculation, and printable invoice generation",
-      "Built 15-module system with role-based access control (Admin, Pharmacist, Cashier)",
-      "Created 4 report types (Inventory, Sales, Expiry, Supplier) with PDF/CSV export",
-      "Designed 8 reusable shared components and global toast notification system",
-      "Implemented Inventory CRUD with search, filters, pagination, and expiry tracking",
-    ],
+    image: "/dairy managmeng.jpge.jpg",
   },
 ];
 

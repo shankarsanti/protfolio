@@ -14,6 +14,7 @@ export interface LinksDto {
   instagram: string;
   youtube: string;
   facebook?: string;
+  phone?: string;
 }
 
 export interface AboutDto {
@@ -25,6 +26,7 @@ export interface AboutDto {
   images: ImageDto;
   links: LinksDto;
   connect: string[];
+  location?: string;
 }
 
 export interface LogoDto {
@@ -83,6 +85,7 @@ export interface ProjectDto {
   highlights: string[];
   url?: string;
   github?: string;
+  image?: string;
   index?: number;
 }
 

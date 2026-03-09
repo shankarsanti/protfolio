@@ -9,6 +9,8 @@ import {
   FaInstagram,
   FaEnvelope,
   FaFacebook,
+  FaPhone,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import packageJson from "@/package.json";
@@ -79,7 +81,7 @@ export function Footer({ about }: { about?: AboutDto | null }) {
               <div className="flex items-center gap-2 mb-3">
                 {about?.links &&
                   Object.entries(about.links).map(([key, url]) => {
-                    if (key === "website" || key === "email" || !url) return null;
+                    if (key === "website" || key === "email" || key === "phone" || !url) return null;
                     const IconComponent = iconMap[key.toLowerCase()];
                     if (!IconComponent) return null;
 
@@ -97,11 +99,26 @@ export function Footer({ about }: { about?: AboutDto | null }) {
                     );
                   })}
               </div>
-              {about?.links?.email && (
-                <a href={`mailto:${about.links.email}`} className="text-text-secondary hover:text-accent-blue transition-colors text-xs">
-                  {about.links.email}
-                </a>
-              )}
+              <div className="space-y-1.5">
+                {about?.links?.email && (
+                  <a href={`mailto:${about.links.email}`} className="flex items-center gap-2 text-text-secondary hover:text-accent-blue transition-colors text-xs">
+                    <FaEnvelope className="w-3 h-3" />
+                    <span>{about.links.email}</span>
+                  </a>
+                )}
+                {about?.links?.phone && (
+                  <a href={`tel:${about.links.phone}`} className="flex items-center gap-2 text-text-secondary hover:text-accent-blue transition-colors text-xs">
+                    <FaPhone className="w-3 h-3" />
+                    <span>{about.links.phone}</span>
+                  </a>
+                )}
+                {about?.location && (
+                  <p className="flex items-center gap-2 text-text-secondary text-xs mt-2">
+                    <FaMapMarkerAlt className="w-3 h-3" />
+                    <span>{about.location}</span>
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </div>
