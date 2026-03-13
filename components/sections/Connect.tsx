@@ -19,6 +19,7 @@ import {
   FaEnvelope,
   FaPaperPlane,
   FaFacebook,
+  FaPhone,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import React, { useState } from "react";
@@ -31,6 +32,7 @@ const iconMap: Record<string, React.ElementType> = {
   instagram: FaInstagram,
   facebook: FaFacebook,
   email: FaEnvelope,
+  phone: FaPhone,
 };
 
 export function Connect({ about }: { about?: AboutDto | null }) {
@@ -89,6 +91,7 @@ export function Connect({ about }: { about?: AboutDto | null }) {
     youtube: "YouTube",
     instagram: "Instagram",
     facebook: "Facebook",
+    phone: "Phone",
   };
 
   return (
@@ -267,12 +270,16 @@ export function Connect({ about }: { about?: AboutDto | null }) {
                       socialNameMap[key.toLowerCase()] ||
                       key.charAt(0).toUpperCase() + key.slice(1);
 
+                    // Use tel: protocol for phone numbers
+                    const href = key === "phone" ? `tel:${url}` : url;
+                    const displayUrl = key === "phone" ? url : url.replace(/^https?:\/\/(www\.)?/, "");
+
                     return (
                       <CardButton
                         key={key}
                         variant="social"
-                        href={url}
-                        external={true}
+                        href={href}
+                        external={key !== "phone"}
                         leftIcon={
                           IconComponent && (
                             <IconComponent className="h-5 w-5 shrink-0" />
@@ -283,7 +290,7 @@ export function Connect({ about }: { about?: AboutDto | null }) {
                         <div className="min-w-0">
                           <p className="font-medium truncate">{name}</p>
                           <p className="text-xs hover:text-on-accent/80 truncate">
-                            {url.replace(/^https?:\/\/(www\.)?/, "")}
+                            {displayUrl}
                           </p>
                         </div>
                       </CardButton>
