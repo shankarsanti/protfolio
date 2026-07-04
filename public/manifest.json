@@ -1,0 +1,27 @@
+{
+  "name": "Shankar Santi - Full Stack Developer Portfolio",
+  "short_name": "Shankar Santi",
+  "description": "Full Stack Developer specializing in React.js, Node.js, MongoDB, and Django",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/shiva.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/shiva.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"],
+  "lang": "en-US",
+  "dir": "ltr"
+}

@@ -1,0 +1,92 @@
+"use client";
+
+import { FaGraduationCap, FaExternalLinkAlt, FaUniversity, FaSchool } from "react-icons/fa";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { EducationDto } from "@/lib/types";
+import { Card } from "./Card";
+import * as FaIcons from "react-icons/fa";
+
+interface EducationCardProps {
+  education: EducationDto;
+  className?: string;
+}
+
+function InstitutionLogo({
+  logo,
+  alt,
+  iconName,
+}: {
+  logo?: { light: string; dark: string } | null;
+  alt: string;
+  iconName?: string;
+}) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const rafId = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(rafId);
+  }, []);
+
+  // If iconName is provided, use React Icon
+  if (iconName) {
+    const IconComponent = (FaIcons as any)[iconName] || FaGraduationCap;
+    return <IconComponent className="h-10 w-10" />;
+  }
+
+  if (!logo) return <FaGraduationCap className="h-10 w-10" />;
+
+  if (!mounted) {
+    return <div className="w-full h-full relative" />;
+  }
+
+  return (
+    <>
+      <div className="dark:hidden w-full h-full relative">
+        <Image src={logo.light} alt={alt} fill className="object-contain p-2" />
+      </div>
+      <div className="hidden dark:block w-full h-full relative">
+        <Image src={logo.dark} alt={alt} fill className="object-contain p-2" />
+      </div>
+    </>
+  );
+}
+
+export function EducationCard({ education, className }: EducationCardProps) {
+  return (
+    <Card variant="elevated" hover className={className}>
+      <div className="flex items-start gap-4">
+        {/* Icon */}
+        <div className="relative flex h-20 w-20 shrink-0 items-center justify-center rounded-xl bg-accent-blue/10 text-accent-blue overflow-hidden">
+          <InstitutionLogo 
+            logo={education.logo} 
+            alt={education.institution}
+            iconName={education.iconName}
+          />
+        </div>
+
+        {/* Course */}
+        <div className="flex-1 min-w-0">
+          <h3 className="text-xl font-bold text-text-primary mb-1">
+            {education.course}
+          </h3>
+
+          {/* Institution */}
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-text-primary font-medium">
+              {education.institution}
+            </span>
+          </div>
+
+          {/* Period */}
+          <p className="text-base text-text-muted mb-3">{education.period}</p>
+
+          {/* Description */}
+          <p className="text-text-secondary whitespace-pre-line">
+            {education.description}
+          </p>
+        </div>
+      </div>
+    </Card>
+  );
+}
