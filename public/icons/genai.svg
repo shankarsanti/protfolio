@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="100%" height="100%">
+  <defs>
+    <linearGradient id="genAiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="sparkleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F43F5E"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Main 4-point AI sparkle star -->
+  <path d="M24 4 C24 15 15 24 4 24 C15 24 24 33 24 44 C24 33 33 24 44 24 C33 24 24 15 24 4 Z" fill="url(#genAiGrad)"/>
+  
+  <!-- Secondary small star top right -->
+  <path d="M37 6 C37 10 34 13 30 13 C34 13 37 16 37 20 C37 16 40 13 44 13 C40 13 37 10 37 6 Z" fill="url(#sparkleGrad)"/>
+  
+  <!-- Small dot bottom left -->
+  <circle cx="10" cy="38" r="3" fill="#8B5CF6"/>
+  
+  <!-- Center glow -->
+  <circle cx="24" cy="24" r="3.5" fill="#FFF" opacity="0.9"/>
+</svg>
